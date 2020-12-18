@@ -38,7 +38,10 @@ export default class Slider extends Component {
           }
         }
       },
-      onPanResponderTerminationRequest: (evt, gestureState) => true,
+      onPanResponderTerminationRequest: (evt, gestureState) => {
+        this.resetBar();
+        return;
+      },
       onPanResponderRelease: (evt, gestureState) => {
         this.resetBar();
         this.canReachEnd = true;
